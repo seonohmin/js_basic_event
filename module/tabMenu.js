@@ -1,4 +1,5 @@
-const headerDOM = document.getElementsByTagName('header')[0];
+// const headerDOM = document.getElementsByTagName('header')[0];
+// const headerHeight = headerDOM.offsetHeight;
 
 const selectAnchorMenuDOM = document.getElementById('anchor-to-select');
 const resultAnchorMenuDOM = document.getElementById('anchor-to-result');
@@ -8,15 +9,21 @@ const selectSectionDOM = document.getElementById('participate-section');
 const resultSectionDOM = document.getElementById('result-section');
 const mbtiSectionDOM = document.getElementById('mbti-section');
 
-export const setTabMenu = () => {
-
-    selectAnchorMenuDOM.onclick = () => {
-        // const scrollTargetY = selectSectionDOM.offsetTop;
-        // window.scroll({
-        //     top: scrollTargetY,
-        //     left: 0,
-        //     behavior: 'smooth',
-        // });
-        selectSectionDOM.scrollIntoView({ behavior: 'smooth' });
+const setScrollHandler = (anchorDOM, targetDOM) => {
+    anchorDOM.onclick = () => {
+        const scrollTargetY = targetDOM.offsetTop;
+        window.scroll({
+            top: scrollTargetY,
+            left: 0,
+            behavior: 'smooth',
+        });
     };
+};
+
+export const setTabMenu = () => {
+    setScrollHandler(selectAnchorMenuDOM, selectSectionDOM)
+    setScrollHandler(resultAnchorMenuDOM, resultSectionDOM)
+    setScrollHandler(mbtiAnchorMenuDOM, mbtiSectionDOM)
+
+    
 };
