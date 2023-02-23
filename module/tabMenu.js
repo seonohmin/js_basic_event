@@ -1,6 +1,3 @@
-// const headerDOM = document.getElementsByTagName('header')[0];
-// const headerHeight = headerDOM.offsetHeight;
-
 const selectAnchorMenuDOM = document.getElementById('anchor-to-select');
 const resultAnchorMenuDOM = document.getElementById('anchor-to-result');
 const mbtiAnchorMenuDOM = document.getElementById('anchor-to-mbti');
@@ -24,6 +21,4 @@ export const setTabMenu = () => {
     setScrollHandler(selectAnchorMenuDOM, selectSectionDOM)
     setScrollHandler(resultAnchorMenuDOM, resultSectionDOM)
     setScrollHandler(mbtiAnchorMenuDOM, mbtiSectionDOM)
-
-    
 };
